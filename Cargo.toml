@@ -1,0 +1,23 @@
+[package]
+name = "nadash"
+version = "0.1.0"
+edition = "2021"
+description = "Rust-based Compiler and Interpreter for the 'Nadeshiko'"
+license = "MIT"
+
+[dependencies]
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[[bin]]
+name = "nadash"
+path = "src/main.rs"
+
+[lib]
+name = "nadash"
+path = "src/lib.rs"
