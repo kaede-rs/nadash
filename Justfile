@@ -1,8 +1,8 @@
-debugbuild:
+build: debug:
   cargo build -vv
 
-releaseuild:
+build: release:
   cargo build -rvv
 
-usebuild:
+build: use
   RUSTFLAGS="-C target-cpu=native" cargo build -rvv
